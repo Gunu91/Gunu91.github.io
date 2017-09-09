@@ -1,0 +1,56 @@
+{% comment %}<!--
+Collate_javas helper. Collated javas by year and month.
+Usage:
+  1) assign the 'javas_collate' variable to a valid array of javas.
+  2) include JB/javas_collate
+  example:
+    {% assign javas_collate = site.javas %}
+    {% include JB/javas_collate %}
+
+  Ordering:
+    Posts are displayed in reverse chronological order.
+    For normal chronological order:
+      1) Change the for loop to this:
+        => 'for java in site.javas reversed'
+      2) Next make sure to change 'java.previous.date' to:
+        => 'java.next.date'
+        
+-->{% endcomment %}
+
+{% if site.JB.javas_collate.provider == "custom" %}
+  {% include custom/javas_collate %}
+{% else %}
+  {% for java in javas_collate  %}
+    {% capture this_year %}{{ java.date | date: "%Y" }}{% endcapture %}
+    {% capture this_month %}{{ java.date | date: "%B" }}{% endcapture %}
+    {% capture next_year %}{{ java.previous.date | date: "%Y" }}{% endcapture %}
+    {% capture next_month %}{{ java.previous.date | date: "%B" }}{% endcapture %}
+  
+    {% if forloop.first %}
+      <h2 class="nice-title">{{this_year}}</h2>
+      <h3 class="nice-text">{{this_month}}</h3>
+      <ul>
+    {% endif %}
+  
+    <li><span>{{ java.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ java.url }}">{{ java.title }}</a></li>
+  
+    {% if forloop.last %}
+      </ul>
+    {% else %}
+      {% if this_year != next_year %}
+        </ul>
+        <hr/>
+        <h2 class="nice-title">{{next_year}}</h2>
+        <h3 class="nice-text">{{next_month}}</h3>
+        <ul>
+      {% else %}    
+        {% if this_month != next_month %}
+          </ul>
+          <h3 class="nice-text">{{next_month}}</h3>
+          <ul>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% assign javas_collate = nil %}
