@@ -3,6 +3,7 @@
 
 {% include head.html %}
 
+<!-- 메인 페이지 베너-->
 <body>
 <section class="hero is-dark">
   <div class="hero-body">
@@ -19,6 +20,7 @@
   </div>
 </section>
 
+<!-- 메인페이지 베너 아래 네비게이션 -->
 <div class="main-container">
   <div class="tile is-ancestor is-vertical">
 
@@ -33,7 +35,7 @@
           </span>
         </a>
 
-        <a href="https://github.com/abhn" class="nav-item">
+        <a href="https://github.com/gunu91" class="nav-item">
           <span class="icon">
             <i class="fa fa-github" aria-hidden="true" title="Github"></i>
           </span>
@@ -45,8 +47,8 @@
               <input class="input is-small" type="text" placeholder="Find an article" id="search-text">
             </p>
             <p class="control">
-              <a class="button is-dark is-small" onclick="searchHandler();">
-                Search
+              <a class="button is-dark is-small" onclick="searchHandler();"> <!--구글 서치  JS찾아서 수정해야함-->
+                찾기
               </a>
             </p>
           </div>
@@ -60,9 +62,9 @@
       </div>
 
       <span class="nav-toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span>확인용</span>
+          <span>확인용1</span>
+          <span>확인용2</span>
     </nav>
 
     <div class="tile is-parent">
@@ -71,7 +73,7 @@
         {{ content }}
 
       </div>
-
+      <!-- Recent Posts 메뉴-->
       <div class="tile is-4 is-child">
         <div class="tile is-parent is-vertical sidebar">
 
@@ -80,13 +82,13 @@
             <div class="card">
               <header class="card-header">
                 <p class="card-header-title nice-title">
-                  Recent Posts
+                  최근 글(Recent Posts)
                 </p>
               </header>
               <div class="card-content">
                 <div class="content nice-text">
                   <ul>
-                  {% for post in site.posts limit:3 %}
+                  {% for post in site.posts limit:5 %}
                   <li><a href="{{ post.url }}">
                     {{ post.title }}
                   </a></li>
@@ -97,12 +99,13 @@
             </div>
           </div>
 
+          <!-- Sponsored 메뉴-->
           <div class="tile is-child widget">
 
             <div class="card">
               <header class="card-header">
                 <p class="card-header-title nice-title">
-                  Sponsored
+                  도우미(Sponsored)
                 </p>
               </header>
               <div class="card-content">
@@ -113,34 +116,31 @@
             </div>
 
           </div>
-
+          <!-- Recommended Websites -->
           <div class="tile is-child widget">
             <div class="card">
               <header class="card-header">
                 <p class="card-header-title nice-title">
-                  Recommended Websites
+                  참고 Site(Recommended Websites)
                 </p>
               </header>
               <div class="card-content">
                 <div class="content nice-text">
                   <ul>
                     <li>
-                      <a href="https://xkcd.com">xkcd</a>
+                      <a href="https://www.google.com">Google</a>
                     </li>
                     <li>
-                      <a href="http://commitstrip.com">Commit Strip</a>
+                      <a href="http://www.naver.com">Naver</a>
                     </li>
                     <li>
-                      <a href="http://www.smbc-comics.com">SMBC Comics</a>
+                      <a href="http://www.daum.net">Daum</a>
                     </li>
                     <li>
-                      <a href="https://blog.codinghorror.com">Coding Horror</a>
+                      <a href="http://userjjs.github.io">JJS블로그</a>
                     </li>
                     <li>
-                      <a href="http://waitbutwhy.com">Wait Buy Why</a>
-                    </li>
-                    <li>
-                      <a href="https://simplysoch.wordpress.com/">Simply Soch</a>
+                      <a href="http://www.youtube.com">YouTube</a>
                     </li>
                   </ul>
                 </div>
@@ -161,7 +161,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        Some rights reserved.
+        Some rights reserved
       </p>
       <p>
         Made with <i class="fa fa-heart"></i> and <a href="https://github.com/jgthms/bulma">Bulma</a>, <a href="https://jekyllrb.com/">Jekyll</a>. Hosted on <a href="https://github.com/">Github</a>
