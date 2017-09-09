@@ -8,14 +8,14 @@ highlighter: rouge
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Abhishek Nagekar's Blog
+title : Gunu's Blog
 tagline: Code, Science, Philosophy, Humor
 author :
-  name : Abhishek Nagekar
-  email : abhishek@nagekar.com
-  github : abhn
-  twitter : abhisheknagekar
-  feedburner : AbhishekN
+  name : gunu91
+  email : kkw7654321@naver.com
+  github : gunu91
+  twitter : none
+  feedburner : none
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
